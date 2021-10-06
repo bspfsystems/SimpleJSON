@@ -116,6 +116,23 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      * {@inheritDoc}
      */
     @Override
+    public int size() {
+        return super.size();
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    @NotNull
+    public Iterator<Map.Entry<String, Object>> iterator() {
+        return super.entrySet().iterator();
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void set(@NotNull final String key, @Nullable final Object value) {
         this.put(key, value);
     }

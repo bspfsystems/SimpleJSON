@@ -26,14 +26,31 @@
 
 package org.bspfsystems.simplejson;
 
+import java.util.Iterator;
 import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents an object that contains listed objects in JSON array format and
  * can be serialized according to the RFC 7159 JSON specification.
  */
-public interface JSONArray extends JSONSerializable {
+public interface JSONArray extends JSONSerializable, Iterable<Object> {
+    
+    /**
+     * Gets the size of this {@link JSONArray}.
+     * 
+     * @return The size of this {@link JSONArray}.
+     */
+    int size();
+    
+    /**
+     * Gets an {@link Iterator} over the entries in this {@link JSONArray}.
+     * 
+     * @return An {@link Iterator} over the entries in this {@link JSONArray}.
+     */
+    @NotNull
+    Iterator<Object> iterator();
     
     /**
      * Adds the given value at the end of this {@link JSONArray}.

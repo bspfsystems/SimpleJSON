@@ -26,6 +26,8 @@
 
 package org.bspfsystems.simplejson;
 
+import java.util.Iterator;
+import java.util.Map;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +36,22 @@ import org.jetbrains.annotations.Nullable;
  * Represents an object that contains key-value pairings in JSON object format
  * and can be serialized according to RFC 7159 JSON specification.
  */
-public interface JSONObject extends JSONSerializable {
+public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String, Object>> {
+    
+    /**
+     * Gets the size of this {@link JSONObject}.
+     * 
+     * @return The size of this {@link JSONObject}.
+     */
+    int size();
+    
+    /**
+     * Gets an {@link Iterator} over the entries in this {@link JSONObject}.
+     *
+     * @return An {@link Iterator} over the entries in this {@link JSONObject}.
+     */
+    @NotNull
+    Iterator<Map.Entry<String, Object>> iterator();
     
     /**
      * Associates the given key to the given value.

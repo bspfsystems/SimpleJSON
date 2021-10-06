@@ -84,6 +84,23 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      * {@inheritDoc}
      */
     @Override
+    public int size() {
+        return super.size();
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    @NotNull
+    public Iterator<Object> iterator() {
+        return super.iterator();
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void addEntry(@Nullable final Object value) {
         super.add(value);
     }
