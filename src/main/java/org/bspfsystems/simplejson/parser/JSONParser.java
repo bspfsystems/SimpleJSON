@@ -239,7 +239,7 @@ public final class JSONParser {
                 case PARSED_ERROR:
                     throw new JSONException("Unexpected token \"" + jsonToken + "\" at position " + jsonReader.getPosition() + ". Please fix the String and try to parse again.");
     
-                    // Parsing a List
+                // Parsing a List
                 case PARSING_LIST:
                     switch (jsonToken.getType()) {
     

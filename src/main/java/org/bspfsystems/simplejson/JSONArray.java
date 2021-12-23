@@ -104,7 +104,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * {@link JSONArray}'s bounds, or if there is an entry at the index and the
      * value is not {@code null}.
      * <p>
-     * This will return {@code true} if the d at the index is {@code null}
+     * This will return {@code true} if the data at the index is {@code null}
      * (the index must be within this {@link JSONArray}'s bounds), regardless of
      * what type of {@link Object} the entry is supposed to be.
      *

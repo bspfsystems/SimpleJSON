@@ -134,9 +134,9 @@ final class JSONReader {
     /**
      * The transition table of the DFA.
      */
-    private static final int[] TRANS = zzUnpackTrans();
+    private static final int[] TRANS = unpackTrans();
     
-    private static int[] zzUnpackTrans() {
+    private static int[] unpackTrans() {
         final int[] result = new int[700];
         int packedIndex = 0;
         int unpackedIndex = 0;
@@ -155,9 +155,9 @@ final class JSONReader {
     /**
      * {@code Lex.ATTRIBUTE[aState]} contains the attributes of {@code aState}.
      */
-    private static final int[] ATTRIBUTE = zzUnpackAttribute();
+    private static final int[] ATTRIBUTE = unpackAttribute();
     
-    private static int[] zzUnpackAttribute() {
+    private static int[] unpackAttribute() {
         final int[] result = new int[45];
         int packedIndex = 0;
         int unpackedIndex = 0;
@@ -417,6 +417,7 @@ final class JSONReader {
                         return new JSONToken(JSONToken.Type.RIGHT_BRACE, null);
                     case 11:
                         this.builder.append(this.text());
+                        break;
                     case 12:
                         this.begin(JSONReader.INITIAL);
                         return new JSONToken(JSONToken.Type.DATUM, this.builder.toString());
@@ -424,7 +425,7 @@ final class JSONReader {
                         this.builder.append('\\');
                         break;
                     case 14:
-                        this.builder.append('\"');
+                        this.builder.append('"');
                         break;
                     case 15:
                         this.builder.append('/');
