@@ -39,6 +39,7 @@ import java.util.Stack;
 import org.bspfsystems.simplejson.JSONArray;
 import org.bspfsystems.simplejson.JSONObject;
 import org.bspfsystems.simplejson.JSONSerializable;
+import org.bspfsystems.simplejson.SimpleJSONArray;
 import org.bspfsystems.simplejson.SimpleJSONObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -225,7 +226,7 @@ public final class JSONParser {
     
                         // Beginning of a List
                         case LEFT_SQUARE:
-                            valueStack.push(new ArrayList<Object>());
+                            valueStack.push(new SimpleJSONArray());
                             stateStack.push(JSONParser.ParserState.PARSING_LIST);
                             break;
     
@@ -250,18 +251,18 @@ public final class JSONParser {
     
                         // Actual data in the List
                         case DATUM:
-                            List<Object> value = new ArrayList<Object>((List<?>) valueStack.pop());
-                            value.add(jsonToken.getValue());
-                            valueStack.push(value);
+                            JSONArray parentJSONArray = (JSONArray) valueStack.pop();
+                            parentJSONArray.addEntry(jsonToken.getValue());
+                            valueStack.push(parentJSONArray);
                             stateStack.push(currentState);
                             break;
     
                         // New JSONObject in the List
                         case LEFT_BRACE:
-                            value = new ArrayList<Object>((List<?>) valueStack.pop());
+                            parentJSONArray = (JSONArray) valueStack.pop();
                             final JSONObject jsonObject = new SimpleJSONObject();
-                            value.add(jsonObject);
-                            valueStack.push(value);
+                            parentJSONArray.addEntry(jsonObject);
+                            valueStack.push(parentJSONArray);
                             valueStack.push(jsonObject);
                             stateStack.push(currentState);
                             stateStack.push(JSONParser.ParserState.PARSING_OBJECT);
@@ -269,11 +270,11 @@ public final class JSONParser {
     
                         // New List in the List
                         case LEFT_SQUARE:
-                            value = new ArrayList<Object>((List<?>) valueStack.pop());
-                            final List<Object> list = new ArrayList<Object>();
-                            value.add(list);
-                            valueStack.push(value);
-                            valueStack.push(list);
+                            parentJSONArray = (JSONArray) valueStack.pop();
+                            final JSONArray jsonArray = new SimpleJSONArray();
+                            parentJSONArray.addEntry(jsonArray);
+                            valueStack.push(parentJSONArray);
+                            valueStack.push(jsonArray);
                             stateStack.push(currentState);
                             stateStack.push(JSONParser.ParserState.PARSING_LIST);
                             break;

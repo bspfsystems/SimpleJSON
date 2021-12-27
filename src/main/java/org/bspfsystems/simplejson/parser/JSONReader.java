@@ -403,8 +403,11 @@ final class JSONReader {
                     case 4:
                         return new JSONToken(JSONToken.Type.COMMA, null);
                     case 5:
-                        BigDecimal bigDecimalValue = new BigDecimal(this.text());
-                        return new JSONToken(JSONToken.Type.DATUM, bigDecimalValue);
+                        try {
+                            return new JSONToken(JSONToken.Type.DATUM, Double.parseDouble(this.text()));
+                        } catch (NullPointerException | NumberFormatException e) {
+                            throw new JSONException("An invalid number (" + this.text() + ") is present in the data. Please fix the String and try to parse again.");
+                        }
                     case 6:
                         return new JSONToken(JSONToken.Type.COLON, null);
                     case 7:

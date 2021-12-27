@@ -166,7 +166,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isByte(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Byte;
+        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
     }
     
     /**
@@ -182,7 +182,11 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public byte getByte(final int index, final byte def) {
-        return this.isByte(index) ? (Byte) this.get(index) : def;
+        if (index < 0 || index >= this.size()) {
+            return def;
+        }
+        final Object value = this.get(index);
+        return value instanceof Number ? ((Number) value).byteValue() : def;
     }
     
     /**
@@ -190,7 +194,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isShort(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Short;
+        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
     }
     
     /**
@@ -206,7 +210,11 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public short getShort(final int index, final short def) {
-        return this.isShort(index) ? (Short) this.get(index) : def;
+        if (index < 0 || index >= this.size()) {
+            return def;
+        }
+        final Object value = this.get(index);
+        return value instanceof Number ? ((Number) value).shortValue() : def;
     }
     
     /**
@@ -214,7 +222,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isInteger(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Integer;
+        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
     }
     
     /**
@@ -230,7 +238,11 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public int getInteger(final int index, final int def) {
-        return this.isInteger(index) ? (Integer) this.get(index) : def;
+        if (index < 0 || index >= this.size()) {
+            return def;
+        }
+        final Object value = this.get(index);
+        return value instanceof Number ? ((Number) value).intValue() : def;
     }
     
     /**
@@ -238,7 +250,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isLong(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Long;
+        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
     }
     
     /**
@@ -254,7 +266,11 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public long getLong(final int index, final long def) {
-        return this.isLong(index) ? (Long) this.get(index) : def;
+        if (index < 0 || index >= this.size()) {
+            return def;
+        }
+        final Object value = this.get(index);
+        return value instanceof Number ? ((Number) value).longValue() : def;
     }
     
     /**
@@ -262,7 +278,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isFloat(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Float;
+        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
     }
     
     /**
@@ -278,7 +294,11 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public float getFloat(final int index, final float def) {
-        return this.isFloat(index) ? (Float) this.get(index) : def;
+        if (index < 0 || index >= this.size()) {
+            return def;
+        }
+        final Object value = this.get(index);
+        return value instanceof Number ? ((Number) value).floatValue() : def;
     }
     
     /**
@@ -286,7 +306,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isDouble(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Double;
+        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
     }
     
     /**
@@ -302,7 +322,11 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public double getDouble(final int index, final double def) {
-        return this.isDouble(index) ? (Double) this.get(index) : def;
+        if (index < 0 || index >= this.size()) {
+            return def;
+        }
+        final Object value = this.get(index);
+        return value instanceof Number ? ((Number) value).doubleValue() : def;
     }
     
     /**

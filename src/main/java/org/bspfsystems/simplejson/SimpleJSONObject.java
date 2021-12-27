@@ -182,7 +182,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isByte(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Byte;
+        return this.containsKey(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -198,7 +198,8 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public byte getByte(@NotNull final String key, final byte def) {
-        return this.isByte(key) ? (Byte) this.get(key) : def;
+        final Object value = this.get(key);
+        return value instanceof Number ? ((Number) value).byteValue() : def;
     }
     
     /**
@@ -206,7 +207,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isShort(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Short;
+        return this.containsKey(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -222,7 +223,8 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public short getShort(@NotNull final String key, final short def) {
-        return this.isShort(key) ? (Short) this.get(key) : def;
+        final Object value = this.get(key);
+        return value instanceof Number ? ((Number) value).shortValue() : def;
     }
     
     /**
@@ -230,7 +232,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isInteger(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Integer;
+        return this.containsKey(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -246,7 +248,8 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public int getInteger(@NotNull final String key, final int def) {
-        return this.isInteger(key) ? (Integer) this.get(key) : def;
+        final Object value = this.get(key);
+        return value instanceof Number ? ((Number) value).intValue() : def;
     }
     
     /**
@@ -254,7 +257,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isLong(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Long;
+        return this.containsKey(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -270,7 +273,8 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public long getLong(@NotNull final String key, final long def) {
-        return this.isLong(key) ? (Long) this.get(key) : def;
+        final Object value = this.get(key);
+        return value instanceof Number ? ((Number) value).longValue() : def;
     }
     
     /**
@@ -278,7 +282,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isFloat(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Float;
+        return this.containsKey(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -294,7 +298,8 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public float getFloat(@NotNull final String key, final float def) {
-        return this.isFloat(key) ? (Float) this.get(key) : def;
+        final Object value = this.get(key);
+        return value instanceof Number ? ((Number) value).floatValue() : def;
     }
     
     /**
@@ -302,7 +307,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isDouble(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Double;
+        return this.containsKey(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -318,7 +323,8 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public double getDouble(@NotNull final String key, final double def) {
-        return this.isDouble(key) ? (Double) this.get(key) : def;
+        final Object value = this.get(key);
+        return value instanceof Number ? ((Number) value).doubleValue() : def;
     }
     
     /**
