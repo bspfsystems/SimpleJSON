@@ -29,11 +29,9 @@ package org.bspfsystems.simplejson.parser;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EmptyStackException;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 import org.bspfsystems.simplejson.JSONArray;
@@ -65,9 +63,9 @@ public final class JSONParser {
         PARSING_OBJECT,
     
         /**
-         * Actively parsing a {@link List}.
+         * Actively parsing a {@link JSONArray}.
          */
-        PARSING_LIST,
+        PARSING_ARRAY,
     
         /**
          * Parsing a key-value pair inside a {@link JSONObject}.
@@ -227,7 +225,7 @@ public final class JSONParser {
                         // Beginning of a List
                         case LEFT_SQUARE:
                             valueStack.push(new SimpleJSONArray());
-                            stateStack.push(JSONParser.ParserState.PARSING_LIST);
+                            stateStack.push(JSONParser.ParserState.PARSING_ARRAY);
                             break;
     
                         // Something unexpected
@@ -241,7 +239,7 @@ public final class JSONParser {
                     throw new JSONException("Unexpected token \"" + jsonToken + "\" at position " + jsonReader.getPosition() + ". Please fix the String and try to parse again.");
     
                 // Parsing a List
-                case PARSING_LIST:
+                case PARSING_ARRAY:
                     switch (jsonToken.getType()) {
     
                         // Next item in a List
@@ -276,7 +274,7 @@ public final class JSONParser {
                             valueStack.push(parentJSONArray);
                             valueStack.push(jsonArray);
                             stateStack.push(currentState);
-                            stateStack.push(JSONParser.ParserState.PARSING_LIST);
+                            stateStack.push(JSONParser.ParserState.PARSING_ARRAY);
                             break;
     
                         // End of List
@@ -362,11 +360,11 @@ public final class JSONParser {
                         case LEFT_SQUARE:
                             key = (String) valueStack.pop();
                             parentJSONObject = (JSONObject) valueStack.pop();
-                            final List<Object> list = new ArrayList<Object>();
+                            final JSONArray list = new SimpleJSONArray();
                             parentJSONObject.set(key, list);
                             valueStack.push(parentJSONObject);
                             valueStack.push(list);
-                            stateStack.push(JSONParser.ParserState.PARSING_LIST);
+                            stateStack.push(JSONParser.ParserState.PARSING_ARRAY);
                             break;
     
                         // Something unexpected
