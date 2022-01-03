@@ -6,7 +6,7 @@ A simple library for working with JSON Objects. This is based on Clifton Labs' v
 
 You can download the latest version of the library from [here](https://github.com/bspfsystems/SimpleJSON/releases/latest/).
 
-The latest release is 1.1.2.<br />
+The latest release is 1.1.3.<br />
 The latest snapshot is 1.1.3-SNAPSHOT.
 
 ## Build from Source
