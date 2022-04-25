@@ -1,22 +1,22 @@
-/*
+/* 
  * This file is part of the SimpleJSON Java library.
- *
+ * 
  * It is based on Clifton Labs' version
  * (https://github.com/cliftonlabs/json-simple/), which is a fork of
  * the original by Yidong Fang (https://github.com/fangyidong/json-simple/).
  * Other authors contributions remain the copyright of the respective
  * owner, with the major ones of this derivative listed below.
- *
+ * 
  * Copyright 2008-2009,2012-2014,2021 Yidong Fang
- * Copyright 2008-2009,2012-2014,2016-2021 Clifton Labs
- * Copyright 2021 BSPF Systems, LLC
- *
+ * Copyright 2008-2009,2012-2014,2016-2022 Clifton Labs
+ * Copyright 2021-2022 BSPF Systems, LLC
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -117,7 +117,7 @@ public final class JSONParser {
     
     /**
      * Deserializes the given {@link String} data into a {@link JSONArray}.
-     *
+     * 
      * @param data The JSON data in {@link String} format.
      * @return A {@link JSONArray} containing the deserialized JSON data.
      * @throws JSONException If an error occurs while deserializing the data.
@@ -130,7 +130,7 @@ public final class JSONParser {
     /**
      * Deserializes the data in the given {@link Reader} into a
      * {@link JSONArray}.
-     *
+     * 
      * @param reader The {@link Reader} containing the JSON data.
      * @return A {@link JSONArray} containing the deserialized JSON data.
      * @throws JSONException If an error occurs while deserializing the data.
@@ -143,7 +143,7 @@ public final class JSONParser {
     
     /**
      * Deserializes the given {@link String} data into a {@link JSONObject}.
-     *
+     * 
      * @param data The JSON data in {@link String} format.
      * @return A {@link JSONObject} containing the deserialized JSON data.
      * @throws JSONException If an error occurs while deserializing the data.
@@ -156,7 +156,7 @@ public final class JSONParser {
     /**
      * Deserializes the data in the given {@link Reader} into a
      * {@link JSONObject}.
-     *
+     * 
      * @param reader The {@link Reader} containing the JSON data.
      * @return A {@link JSONObject} containing the deserialized JSON data.
      * @throws JSONException If an error occurs while deserializing the data.
@@ -382,7 +382,7 @@ public final class JSONParser {
     
     /**
      * Serializes the given {@link Object} into {@link String} data.
-     *
+     * 
      * @param data The data as an {@link Object} to serialize into JSON format.
      * @return A {@link String} representation of the given data.
      * @throws JSONException If an error occurs while serializing the data.
@@ -628,7 +628,7 @@ public final class JSONParser {
      * format using indentation and newlines, both of the caller's choice. This
      * means the validity of the formatted JSON is dependent on the caller's
      * choice of indentation and newlines.
-     *
+     * 
      * @param reader The {@link Reader} containing the JSON data.
      * @param indent The {@link String} to use as an indent.
      * @param newline The {@link String} to use as a newline.
@@ -700,7 +700,7 @@ public final class JSONParser {
     /**
      * Escapes potentially confusing or important characters in the
      * {@link String} provided.
-     *
+     * 
      * @param rawData The raw data that needs to be parsed for escapable
      *                character.
      * @return The formatted {@link String} with the characters escaped as
@@ -757,7 +757,7 @@ public final class JSONParser {
     
     /**
      * Processes the {@link JSONReader}'s next token.
-     *
+     * 
      * @param jsonReader The {@link JSONReader} text processor being used for the
      *              deserialization process.
      * @return A {@link JSONToken} representing the meaningful element encountered

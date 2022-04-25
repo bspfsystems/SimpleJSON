@@ -6,8 +6,7 @@ A simple library for working with JSON Objects. This is based on Clifton Labs' v
 
 You can download the latest version of the library from [here](https://github.com/bspfsystems/SimpleJSON/releases/latest/).
 
-The latest release is 1.1.3.<br />
-The latest snapshot is 1.1.3-SNAPSHOT.
+The latest version is release 1.1.4.
 
 ## Build from Source
 
@@ -45,7 +44,7 @@ Include the following in your `pom.xml` file:<br />
 <repositories>
   <repository>
     <id>sonatype-repo</id>
-    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    <url>https://oss.sonatype.org/content/repositories/releases/</url>
   </repository>
   ...
 </repositories>
@@ -56,7 +55,7 @@ Include the following in your `pom.xml` file:<br />
   <dependency>
     <groupId>org.bspfsystems</groupId>
     <artifactId>simple-json</artifactId>
-    <version>1.1.3-SNAPSHOT</version>
+    <version>1.1.4</version>
     <scope>compile</scope>
   </dependency>
   ...
@@ -71,7 +70,7 @@ Include the following in your `build.gradle` file:<br />
 repositories {
     mavenCentral()
     maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots/"
+        url "https://oss.sonatype.org/content/repositories/releases/"
         ...
     }
     ...
@@ -89,7 +88,7 @@ dependencies {
 Also include the following in your `gradle.properties` file:<br />
 ```
 ...
-simple_json_version = 1.1.3-SNAPSHOT
+simple_json_version = 1.1.4
 ...
 ```
 

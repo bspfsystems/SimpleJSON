@@ -1,22 +1,22 @@
-/*
+/* 
  * This file is part of the SimpleJSON Java library.
- *
+ * 
  * It is based on Clifton Labs' version
  * (https://github.com/cliftonlabs/json-simple/), which is a fork of
  * the original by Yidong Fang (https://github.com/fangyidong/json-simple/).
  * Other authors contributions remain the copyright of the respective
  * owner, with the major ones of this derivative listed below.
- *
+ * 
  * Copyright 2008-2009,2012-2014,2021 Yidong Fang
- * Copyright 2008-2009,2012-2014,2016-2021 Clifton Labs
- * Copyright 2021 BSPF Systems, LLC
- *
+ * Copyright 2008-2009,2012-2014,2016-2022 Clifton Labs
+ * Copyright 2021-2022 BSPF Systems, LLC
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -54,7 +54,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
     
     /**
      * Adds the given value at the end of this {@link JSONArray}.
-     *
+     * 
      * @param value The value to add.
      */
     void addEntry(@Nullable final Object value);
@@ -66,7 +66,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the given index is less than 0 or greater than the current size of
      * this {@link JSONArray} minus 1, an {@link IndexOutOfBoundsException} will
      * be thrown.
-     *
+     * 
      * @param index The index to insert into.
      * @param value The value to insert.
      */
@@ -79,7 +79,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the given index is less than 0 or greater than the current size of
      * this {@link JSONArray} minus 1, an {@link IndexOutOfBoundsException} will
      * be thrown.
-     *
+     * 
      * @param index The index to set at.
      * @param value The value to set.
      */
@@ -92,7 +92,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the given index is less than 0 or greater than the current size of
      * this {@link JSONArray} minus 1, an {@link IndexOutOfBoundsException} will
      * be thrown.
-     *
+     * 
      * @param index The index of the entry to remove.
      */
     void unsetEntry(final int index) throws IndexOutOfBoundsException;
@@ -107,7 +107,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code true} if the data at the index is {@code null}
      * (the index must be within this {@link JSONArray}'s bounds), regardless of
      * what type of {@link Object} the entry is supposed to be.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a {@code null} entry at the given index,
      *         {@code false} otherwise.
@@ -120,7 +120,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not a boolean.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a boolean at the given index,
      *         {@code false} otherwise.
@@ -133,7 +133,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a boolean, {@code false}
      * will be returned.
-     *
+     * 
      * @param index The index of the boolean to retrieve.
      * @return The boolean value at the index.
      * @see JSONArray#getBoolean(int, boolean)
@@ -146,7 +146,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a boolean, the default
      * value will be returned.
-     *
+     * 
      * @param index The index of the boolean to retrieve.
      * @param def The default value.
      * @return The boolean value at the index.
@@ -159,7 +159,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not a byte.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a byte at the given index,
      *         {@code false} otherwise.
@@ -172,7 +172,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a byte, {@code (byte) 0}
      * will be returned.
-     *
+     * 
      * @param index The index of the byte to retrieve.
      * @return The byte value at the index.
      * @see JSONArray#getByte(int, byte)
@@ -185,7 +185,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a byte, the default
      * value will be returned.
-     *
+     * 
      * @param index The index of the byte to retrieve.
      * @param def The default value.
      * @return The byte value at the index.
@@ -198,7 +198,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not a short.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a short at the given index,
      *         {@code false} otherwise.
@@ -211,7 +211,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a short,
      * {@code (short) 0} will be returned.
-     *
+     * 
      * @param index The index of the short to retrieve.
      * @return The short value at the index.
      * @see JSONArray#getShort(int, short)
@@ -224,7 +224,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a short, the default
      * value will be returned.
-     *
+     * 
      * @param index The index of the short to retrieve.
      * @param def The default value.
      * @return The short value at the index.
@@ -237,7 +237,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not an integer.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is an integer at the given index,
      *         {@code false} otherwise.
@@ -250,7 +250,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not an integer,
      * {@code 0} will be returned.
-     *
+     * 
      * @param index The index of the integer to retrieve.
      * @return The integer value at the index.
      * @see JSONArray#getInteger(int, int)
@@ -263,7 +263,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not an integer, the default
      * value will be returned.
-     *
+     * 
      * @param index The index of the integer to retrieve.
      * @param def The default value.
      * @return The integer value at the index.
@@ -276,7 +276,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not a long.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a long at the given index,
      *         {@code false} otherwise.
@@ -289,7 +289,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a long, {@code 0L}
      * will be returned.
-     *
+     * 
      * @param index The index of the long to retrieve.
      * @return The long value at the index.
      * @see JSONArray#getLong(int, long)
@@ -302,7 +302,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a long, the default
      * value will be returned.
-     *
+     * 
      * @param index The index of the long to retrieve.
      * @param def The default value.
      * @return The long value at the index.
@@ -315,7 +315,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not a float.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a float at the given index,
      *         {@code false} otherwise.
@@ -328,7 +328,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a float, {@code 0.0F}
      * will be returned.
-     *
+     * 
      * @param index The index of the float to retrieve.
      * @return The float value at the index.
      * @see JSONArray#getFloat(int, float)
@@ -341,7 +341,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a float, the default
      * value will be returned.
-     *
+     * 
      * @param index The index of the float to retrieve.
      * @param def The default value.
      * @return The float value at the index.
@@ -354,7 +354,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not a double.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a double at the given index,
      *         {@code false} otherwise.
@@ -367,7 +367,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a double, {@code 0.0D}
      * will be returned.
-     *
+     * 
      * @param index The index of the double to retrieve.
      * @return The double value at the index.
      * @see JSONArray#getDouble(int, double)
@@ -380,7 +380,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a double, the default
      * value will be returned.
-     *
+     * 
      * @param index The index of the double to retrieve.
      * @param def The default value.
      * @return The double value at the index.
@@ -393,7 +393,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not a {@link String}.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a {@link String} at the given index,
      *         {@code false} otherwise.
@@ -406,7 +406,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a {@link String},
      * {@code null} will be returned.
-     *
+     * 
      * @param index The index of the {@link String} to retrieve.
      * @return The {@link String} value at the index.
      * @see JSONArray#getString(int, String)
@@ -420,7 +420,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a {@link String},
      * the default value will be returned.
-     *
+     * 
      * @param index The index of the {@link String} to retrieve.
      * @param def The default value.
      * @return The {@link String} value at the index.
@@ -435,7 +435,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONArray}'s bounds, or if there is no entry ({@code null}), or if
      * the entry is not a {@link JSONArray}.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a {@link JSONArray} at the given index,
      *         {@code false} otherwise.
@@ -448,7 +448,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a {@link JSONArray},
      * {@code null} will be returned.
-     *
+     * 
      * @param index The index of the {@link JSONArray} to retrieve.
      * @return The {@link JSONArray} value at the index.
      * @see JSONArray#getArray(int, JSONArray)
@@ -462,7 +462,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONArray}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a {@link JSONArray},
      * the default value will be returned.
-     *
+     * 
      * @param index The index of the {@link JSONArray} to retrieve.
      * @param def The default value.
      * @return The {@link JSONArray} value at the index.
@@ -477,7 +477,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * This will return {@code false} if the index is out of this
      * {@link JSONObject}'s bounds, or if there is no entry ({@code null}), or
      * if the entry is not a {@link JSONObject}.
-     *
+     * 
      * @param index The index to check.
      * @return {@code true} if there is a {@link JSONObject} at the given index,
      *         {@code false} otherwise.
@@ -490,7 +490,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONObject}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a {@link JSONObject},
      * {@code null}  will be returned.
-     *
+     * 
      * @param index The index of the {@link JSONObject} to retrieve.
      * @return The {@link JSONObject} value at the index.
      * @see JSONArray#getObject(int, JSONObject)
@@ -504,7 +504,7 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
      * If the index is out of the {@link JSONObject}'s bounds, no entry set
      * ({@code null}), or the value at the index is not a {@link JSONObject},
      * the default value will be returned.
-     *
+     * 
      * @param index The index of the {@link JSONObject} to retrieve.
      * @param def The default value.
      * @return The {@link JSONObject} value at the index.

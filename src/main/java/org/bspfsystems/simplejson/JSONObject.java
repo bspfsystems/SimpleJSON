@@ -1,22 +1,22 @@
-/*
+/* 
  * This file is part of the SimpleJSON Java library.
- *
+ * 
  * It is based on Clifton Labs' version
  * (https://github.com/cliftonlabs/json-simple/), which is a fork of
  * the original by Yidong Fang (https://github.com/fangyidong/json-simple/).
  * Other authors contributions remain the copyright of the respective
  * owner, with the major ones of this derivative listed below.
- *
+ * 
  * Copyright 2008-2009,2012-2014,2021 Yidong Fang
- * Copyright 2008-2009,2012-2014,2016-2021 Clifton Labs
- * Copyright 2021 BSPF Systems, LLC
- *
+ * Copyright 2008-2009,2012-2014,2016-2022 Clifton Labs
+ * Copyright 2021-2022 BSPF Systems, LLC
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -47,7 +47,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
     
     /**
      * Gets an {@link Iterator} over the entries in this {@link JSONObject}.
-     *
+     * 
      * @return An {@link Iterator} over the entries in this {@link JSONObject}.
      */
     @NotNull
@@ -96,7 +96,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not a
      * boolean.
-     *
+     * 
      * @param key The key to check.
      * @return {@code true} if there is a boolean value associated with the
      *         given key, {@code false} otherwise.
@@ -108,7 +108,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a boolean, {@code false} will be returned.
-     *
+     * 
      * @param key The key of the boolean to retrieve.
      * @return The associated boolean value.
      * @see JSONObject#getBoolean(String, boolean)
@@ -120,7 +120,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a boolean, the default value will be returned.
-     *
+     * 
      * @param key The key of the boolean to retrieve.
      * @param def The default value.
      * @return The associated boolean value.
@@ -133,7 +133,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not a
      * byte.
-     *
+     * 
      * @param key The key to check.
      * @return {@code true} if there is a byte value associated with the
      *         given key, {@code false} otherwise.
@@ -145,7 +145,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a byte, {@code (byte) 0} will be returned.
-     *
+     * 
      * @param key The key of the byte to retrieve.
      * @return The associated byte value.
      * @see JSONObject#getByte(String, byte)
@@ -157,7 +157,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a byte, the default value will be returned.
-     *
+     * 
      * @param key The key of the byte to retrieve.
      * @param def The default value.
      * @return The associated byte value.
@@ -170,7 +170,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not a
      * short.
-     *
+     * 
      * @param key The key to check.
      * @return {@code true} if there is a short value associated with the
      *         given key, {@code false} otherwise.
@@ -182,7 +182,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a short, {@code (short) 0} will be returned.
-     *
+     * 
      * @param key The key of the short to retrieve.
      * @return The associated short value.
      * @see JSONObject#getShort(String, short)
@@ -194,7 +194,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a short, the default value will be returned.
-     *
+     * 
      * @param key The key of the short to retrieve.
      * @param def The default value.
      * @return The associated short value.
@@ -207,7 +207,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not an
      * integer.
-     *
+     * 
      * @param key The key to check.
      * @return {@code true} if there is an integer value associated with the
      *         given key, {@code false} otherwise.
@@ -219,7 +219,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not an integer, {@code 0} will be returned.
-     *
+     * 
      * @param key The key of the integer to retrieve.
      * @return The associated integer value.
      * @see JSONObject#getInteger(String, int)
@@ -231,7 +231,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not an integer, the default value will be returned.
-     *
+     * 
      * @param key The key of the integer to retrieve.
      * @param def The default value.
      * @return The associated integer value.
@@ -244,7 +244,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not a
      * long.
-     *
+     * 
      * @param key The key to check.
      * @return {@code true} if there is a long value associated with the
      *         given key, {@code false} otherwise.
@@ -256,7 +256,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a long, {@code 0L} will be returned.
-     *
+     * 
      * @param key The key of the long to retrieve.
      * @return The associated long value.
      * @see JSONObject#getLong(String, long)
@@ -268,7 +268,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a long, the default value will be returned.
-     *
+     * 
      * @param key The key of the long to retrieve.
      * @param def The default value.
      * @return The associated long value.
@@ -281,7 +281,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not a
      * float.
-     *
+     * 
      * @param key The key to check.
      * @return {@code true} if there is a float value associated with the
      *         given key, {@code false} otherwise.
@@ -293,7 +293,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a float, {@code 0.0F} will be returned.
-     *
+     * 
      * @param key The key of the float to retrieve.
      * @return The associated float value.
      * @see JSONObject#getFloat(String, float)
@@ -305,7 +305,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a float, the default value will be returned.
-     *
+     * 
      * @param key The key of the float to retrieve.
      * @param def The default value.
      * @return The associated float value.
@@ -318,7 +318,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not a
      * double.
-     *
+     * 
      * @param key The key to check.
      * @return {@code true} if there is a double value associated with the
      *         given key, {@code false} otherwise.
@@ -330,7 +330,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a double, {@code 0.0D} will be returned.
-     *
+     * 
      * @param key The key of the double to retrieve.
      * @return The associated double value.
      * @see JSONObject#getDouble(String, double)
@@ -342,7 +342,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * <p>
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a double, the default value will be returned.
-     *
+     * 
      * @param key The key of the double to retrieve.
      * @param def The default value.
      * @return The associated double value.
@@ -397,7 +397,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not a
      * {@link JSONArray}.
-     *
+     * 
      * @param key The key to check
      * @return {@code true} if there is a {@link JSONArray} value associated
      *         with the given key, {@code false} otherwise.
@@ -410,7 +410,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a {@link JSONArray}, {@code null} will be
      * returned.
-     *
+     * 
      * @param key The key of the {@link JSONArray} to retrieve.
      * @return The associated {@link JSONArray} value.
      * @see JSONObject#getArray(String, JSONArray)
@@ -424,7 +424,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a {@link JSONArray}, the default value will be
      * returned.
-     *
+     * 
      * @param key The key of the {@link JSONArray} to retrieve.
      * @param def The default value.
      * @return The associated {@link JSONArray} value.
@@ -440,7 +440,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * This will return {@code false} if there is no matching key, or if there
      * is a key but no value set ({@code null}), or if the value is not a
      * {@link JSONObject}.
-     *
+     * 
      * @param key The key to check
      * @return {@code true} if there is a {@link JSONObject} value associated
      *         with the given key, {@code false} otherwise.
@@ -453,7 +453,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a {@link JSONObject}, {@code null} will be
      * returned.
-     *
+     * 
      * @param key The key of the {@link JSONObject} to retrieve.
      * @return The associated {@link JSONObject} value.
      * @see JSONObject#getObject(String, JSONObject)
@@ -467,7 +467,7 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
      * If there is no such key present, no value present ({@code null}), or the
      * associated value is not a {@link JSONObject}, the default value will be
      * returned.
-     *
+     * 
      * @param key The key of the {@link JSONObject} to retrieve.
      * @param def The default value.
      * @return The associated {@link JSONObject} value.
