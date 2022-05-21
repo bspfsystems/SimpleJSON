@@ -1,24 +1,25 @@
-# SimpleJSON Project
+# SimpleJSON
 
 A simple library for working with JSON Objects. This is based on Clifton Labs' version (https://github.com/cliftonlabs/json-simple), which is a fork of Yidong Fang's version (https://github.com/fangyidong/json-simple).
 
-## Download
+## Obtaining SimpleJSON
 
-You can download the latest version of the library from [here](https://github.com/bspfsystems/SimpleJSON/releases/latest/).
-
-The latest version is release 1.1.4.
-
-## Build from Source
+You can obtain a copy of SimpleJSON via the following methods:
+- Download a pre-built copy from the [Releases page](https://github.com/bspfsystems/SimpleJSON/releases/latest/). The latest version is release 1.1.4.
+- Build from source (see below).
+- Include it as a dependency in your project (see the Development API section).
+-
+### Build from Source
 
 SimpleJSON uses [Apache Maven](https://maven.apache.org/) to build and handle dependencies.
 
-### Requirements
+#### Requirements
 
 - Java Development Kit (JDK) 8 or higher
 - Git
 - Apache Maven
 
-### Compile / Build
+#### Compile / Build
 
 Run the following commands to build the library `.jar` file:
 ```
@@ -29,27 +30,21 @@ mvn clean install
 
 The `.jar` file will be located in the `target/` folder.
 
-## Installation
+## Developer API
 
-The main purpose of SimpleJSON is to provide a simple Java library for interacting with JSON objects. It can be used as a dependency in any downstream projects to access the library's capabilities.
-
-### Adding as a Dependency
+### Add SimpleJSON as a Dependency
 
 To add SimpleJSON as a dependency to your project, use one of the following common methods (you may use others that exist, these are the common ones):
 
 **Maven:**<br />
 Include the following in your `pom.xml` file:<br />
 ```
-...
 <repositories>
   <repository>
     <id>sonatype-repo</id>
     <url>https://oss.sonatype.org/content/repositories/releases/</url>
   </repository>
-  ...
 </repositories>
-
-...
 
 <dependencies>
   <dependency>
@@ -58,110 +53,53 @@ Include the following in your `pom.xml` file:<br />
     <version>1.1.4</version>
     <scope>compile</scope>
   </dependency>
-  ...
 </dependencies>
-...
 ```
 
 **Gradle:**<br />
 Include the following in your `build.gradle` file:<br />
 ```
-...
 repositories {
     mavenCentral()
     maven {
         url "https://oss.sonatype.org/content/repositories/releases/"
-        ...
     }
-    ...
 }
-
-...
 
 dependencies {
-    include implementation("org.bspfsystems:simple-json:${project.simple_json_version}")
-    ...
+    implementation "org.bspfsystems:simple-json:1.1.4"
 }
-...
 ```
 
-Also include the following in your `gradle.properties` file:<br />
+### API Examples
+
+These are some basic usages of SimpleJSON; for a full scope of what the library offers, please see the Javadocs section below.
 ```
-...
-simple_json_version = 1.1.4
-...
+// A fair number of serialization and deserialization methods throw a JSONException
+try {
+    
+    // Deserialize a file into a JSONObject
+    JSONObject object = JSONParser.deserialize(new FileReader(new File("data.json")));
+    
+    // Add a few items to the object
+    object.set("new_id", UUID.randomUUID().toString());
+    object.set("new_number", (new Random()).nextInt());
+    
+    // Get a formatted String to print out to a file (with proper indents and newlines)
+    String formatted = JSONParser.format(JSONParser.serialize(object));
+    
+} catch (JSONException e) {
+    e.printStackTrace();
+}
 ```
-
-### Install in a Library Folder
-
-If your use of SimpleJSON requires the `.jar` file in a specific library folder, you can obtain a copy (see Download or Build from Source) and simply place the file in the folder.
-
-### Usage
-
-Please see the Javadocs links below to view the general uses of SimpleJSON.
 
 ### Javadocs
 
-The API Javadocs can be found [here](https://bspfsystems.org/docs/simplejson/), hosted by [javadoc.io](https://javadoc.io/).
+The API Javadocs can be found [here](https://bspfsystems.org/docs/simplejson/), kindly hosted by [javadoc.io](https://javadoc.io/).
 
-## Contributing
+## Contributing, Support, and Issues
 
-### Pull Requests
-
-Contributions to the project are welcome. SimpleJSON is a free and open source software project, created in the hopes that the community would find ways to improve it. If you make any improvements or other enhancements to SimpleJSON, we ask that you submit a Pull Request to merge the changes back upstream. We would enjoy the opportunity to give those improvements back to the wider community.
-
-Various types of contributions are welcome, including (but not limited to):
-- Security updates / patches
-- Bug fixes
-- Feature enhancements
-
-We reserve the right to not include a contribution in the project if the contribution does not add anything substantive or otherwise reduces the functionality of SimpleJSON in a non-desirable way. That said, the idea of having free and open source software was that contributions would be accepted, and discussions over a potential contribution are welcome.
-
-For licensing questions, please see the Licensing section.
-
-### Project Layout
-
-SimpleJSON somewhat follows the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html). This is not the definitive coding style of the project. Generally, it is best to try to copy the style of coding found in the class that you are editing.
-
-## Support / Issues
-
-Issues can be reported [here in GitHub](https://github.com/bspfsystems/SimpleJSON/issues/).
-
-### First Steps
-
-Before creating an issue, please search to see if anyone else has reported the same issue. Don't forget to search the closed issues. It is much easier for us (and will get you a faster response) to handle a single issue that affects multiple users than it is to have to deal with duplicates.
-
-There is also a chance that your issue has been resolved previously. In this case, you can (ideally) find the answer to your problem without having to ask (new version of SimpleJSON, configuration update, etc).
-
-### Creating an Issue
-
-If no one has reported the issue previously, or the solution is not apparent, please open a new issue. When creating the issue, please give it a descriptive title (no "It's not working", please), and put as much detail into the description as possible. The more details you add, the easier it becomes for us to solve the issue. Helpful items may include:
-- A descriptive title for the issue
-- The version of SimpleJSON you are using
-- Logs and/or stack traces
-- Any steps to reproducing the issue
-- Anything else that might be helpful in solving your issue.
-
-_Note:_ Please redact any Personally-Identifiable Information (PII) when you create your issue. These may appear in logs or stack traces. Examples include (but are not limited to):
-- Real names of people / companies
-- Usernames of accounts on computers (may appear in logs or stack traces)
-- IP addresses / hostnames
-- etc.
-
-If you are not sure, you can always redact or otherwise change the data.
-
-### Non-Acceptable Issues
-
-Issues such as "I need help" or "It doesn't work" will not be addressed and/or will be closed with no assistance given. These type of issues do not have any meaningful details to properly address the problem. Other issues that will not be addressed and/or closed without help include (but are not limited to):
-- How to install SimpleJSON (explained in README)
-- How to use SimpleJSON as a dependency (explained in README)
-- How to create libraries
-- How to set up a development environment
-- How to install libraries
-- Other issues of similar nature...
-
-
-This is not a help forum for software development or associated issues. Other resources, such as [Google](https://www.google.com/), should have answers to most questions not related to SimpleJSON.
+Please check out [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 ## Licensing
 
