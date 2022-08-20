@@ -47,12 +47,12 @@ Include the following in your `pom.xml` file:<br />
 </repositories>
 
 <dependencies>
-  <dependency>
-    <groupId>org.bspfsystems</groupId>
-    <artifactId>simple-json</artifactId>
-    <version>1.1.4</version>
-    <scope>compile</scope>
-  </dependency>
+    <dependency>
+        <groupId>org.bspfsystems</groupId>
+        <artifactId>simple-json</artifactId>
+        <version>1.1.4</version>
+        <scope>compile</scope>
+    </dependency>
 </dependencies>
 ```
 
