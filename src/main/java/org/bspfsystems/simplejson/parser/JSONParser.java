@@ -9,7 +9,7 @@
  * 
  * Copyright 2008-2009,2012-2014,2021 Yidong Fang
  * Copyright 2008-2009,2012-2014,2016-2022 Clifton Labs
- * Copyright 2021-2022 BSPF Systems, LLC
+ * Copyright 2021-2023 BSPF Systems, LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -651,7 +651,7 @@ public final class JSONParser {
             
             switch (jsonToken.getType()) {
                 case COLON:
-                    builder.append(jsonToken.getValue());
+                    builder.append(jsonToken.getValue()).append(" ");
                     break;
                 case COMMA:
                     builder.append(jsonToken.getValue());

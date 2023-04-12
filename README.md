@@ -5,7 +5,7 @@ A simple library for working with JSON Objects. This is based on Clifton Labs' v
 ## Obtaining SimpleJSON
 
 You can obtain a copy of SimpleJSON via the following methods:
-- Download a pre-built copy from the [Releases page](https://github.com/bspfsystems/SimpleJSON/releases/latest/). The latest version is release 1.1.4.
+- Download a pre-built copy from the [Releases page](https://github.com/bspfsystems/SimpleJSON/releases/latest/). The latest version is release 1.1.5.
 - Build from source (see below).
 - Include it as a dependency in your project (see the Development API section).
 -
@@ -50,7 +50,7 @@ Include the following in your `pom.xml` file:<br />
     <dependency>
         <groupId>org.bspfsystems</groupId>
         <artifactId>simple-json</artifactId>
-        <version>1.1.4</version>
+        <version>1.1.5</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    implementation "org.bspfsystems:simple-json:1.1.4"
+    implementation "org.bspfsystems:simple-json:1.1.5"
 }
 ```
 
