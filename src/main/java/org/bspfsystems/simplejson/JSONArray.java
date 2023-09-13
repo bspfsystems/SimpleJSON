@@ -53,6 +53,18 @@ public interface JSONArray extends JSONSerializable, Iterable<Object> {
     Iterator<Object> iterator();
     
     /**
+     * Checks if the given index contains any value, including {@code null}.
+     * <p>
+     * This will return {@code true} for any index within the range of {@code 0}
+     * to {@code #size() - 1}, and {@code false} for any other value.
+     * 
+     * @param index The index to check for any value, including {@code null}.
+     * @return {@code true} if the index is within the size range of this
+     *         {@link JSONArray}, {@code false} otherwise.
+     */
+    boolean isSet(final int index);
+    
+    /**
      * Adds the given value at the end of this {@link JSONArray}.
      * 
      * @param value The value to add.

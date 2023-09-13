@@ -133,6 +133,14 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      * {@inheritDoc}
      */
     @Override
+    public boolean isSet(@NotNull final String key) {
+        return this.containsKey(key);
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void set(@NotNull final String key, @Nullable final Object value) {
         this.put(key, value);
     }
@@ -150,7 +158,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isNull(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) == null;
+        return this.isSet(key) && this.get(key) == null;
     }
     
     /**
@@ -158,7 +166,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isBoolean(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Boolean;
+        return this.isSet(key) && this.get(key) instanceof Boolean;
     }
     
     /**
@@ -182,7 +190,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isByte(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Number;
+        return this.isSet(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -207,7 +215,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isShort(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Number;
+        return this.isSet(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -232,7 +240,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isInteger(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Number;
+        return this.isSet(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -257,7 +265,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isLong(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Number;
+        return this.isSet(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -282,7 +290,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isFloat(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Number;
+        return this.isSet(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -307,7 +315,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isDouble(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof Number;
+        return this.isSet(key) && this.get(key) instanceof Number;
     }
     
     /**
@@ -332,7 +340,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isString(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof String;
+        return this.isSet(key) && this.get(key) instanceof String;
     }
     
     /**
@@ -359,7 +367,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isArray(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof JSONArray;
+        return this.isSet(key) && this.get(key) instanceof JSONArray;
     }
     
     /**
@@ -386,7 +394,7 @@ public final class SimpleJSONObject extends LinkedHashMap<String, Object> implem
      */
     @Override
     public boolean isObject(@NotNull final String key) {
-        return this.containsKey(key) && this.get(key) instanceof JSONObject;
+        return this.isSet(key) && this.get(key) instanceof JSONObject;
     }
     
     /**

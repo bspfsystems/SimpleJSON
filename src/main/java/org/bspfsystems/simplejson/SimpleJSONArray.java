@@ -102,6 +102,14 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      * {@inheritDoc}
      */
     @Override
+    public boolean isSet(final int index) {
+        return index >= 0 && index < this.size();
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void addEntry(@Nullable final Object value) {
         super.add(value);
     }
@@ -135,7 +143,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isNull(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) == null;
+        return this.isSet(index) && this.get(index) == null;
     }
     
     /**
@@ -143,7 +151,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isBoolean(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Boolean;
+        return this.isSet(index) && this.get(index) instanceof Boolean;
     }
     
     /**
@@ -167,7 +175,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isByte(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
+        return this.isSet(index) && this.get(index) instanceof Number;
     }
     
     /**
@@ -195,7 +203,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isShort(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
+        return this.isSet(index) && this.get(index) instanceof Number;
     }
     
     /**
@@ -223,7 +231,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isInteger(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
+        return this.isSet(index) && this.get(index) instanceof Number;
     }
     
     /**
@@ -251,7 +259,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isLong(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
+        return this.isSet(index) && this.get(index) instanceof Number;
     }
     
     /**
@@ -279,7 +287,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isFloat(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
+        return this.isSet(index) && this.get(index) instanceof Number;
     }
     
     /**
@@ -307,7 +315,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isDouble(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof Number;
+        return this.isSet(index) && this.get(index) instanceof Number;
     }
     
     /**
@@ -335,7 +343,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isString(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof String;
+        return this.isSet(index) && this.get(index) instanceof String;
     }
     
     /**
@@ -362,7 +370,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isArray(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof JSONArray;
+        return this.isSet(index) && this.get(index) instanceof JSONArray;
     }
     
     /**
@@ -389,7 +397,7 @@ public final class SimpleJSONArray extends ArrayList<Object> implements JSONArra
      */
     @Override
     public boolean isObject(final int index) {
-        return index >= 0 && index < this.size() && this.get(index) instanceof JSONObject;
+        return this.isSet(index) && this.get(index) instanceof JSONObject;
     }
     
     /**

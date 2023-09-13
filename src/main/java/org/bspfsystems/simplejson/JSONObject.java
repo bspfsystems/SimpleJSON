@@ -54,6 +54,16 @@ public interface JSONObject extends JSONSerializable, Iterable<Map.Entry<String,
     Iterator<Map.Entry<String, Object>> iterator();
     
     /**
+     * Checks to see if the given key is associated with any value, including
+     * {@code null}.
+     * 
+     * @param key The key to check for.
+     * @return {@code true} if the given key is set to any value, including
+     *         {@code null}, {@code false} otherwise.
+     */
+    boolean isSet(@NotNull final String key);
+    
+    /**
      * Associates the given key to the given value.
      * <p>
      * If the given key was already associated with another value, including
