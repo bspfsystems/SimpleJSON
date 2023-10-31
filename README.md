@@ -1,5 +1,7 @@
 # SimpleJSON
 
+## THIS REPOSITORY IS NO LONGER MAINTAINED. NO FURTHER UPDATES WILL BE MADE.
+
 A simple library for working with JSON Objects. This is based on Clifton Labs' version (https://github.com/cliftonlabs/json-simple), which is a fork of Yidong Fang's version (https://github.com/fangyidong/json-simple).
 
 ## Obtaining SimpleJSON
